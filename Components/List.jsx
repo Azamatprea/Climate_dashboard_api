@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 // WMO weather codes mapping helper
 export const getWeatherInfo = (code) => {
@@ -24,7 +25,7 @@ export const getTempClass = (temp) => {
   return 'temp-cold';
 };
 
-function List({ items, onViewDetail }) {
+function List({ items }) {
   if (items.length === 0) {
     return (
       <div className="glass empty-state">
@@ -126,12 +127,13 @@ function List({ items, onViewDetail }) {
                 
                 {/* Actions Cell */}
                 <td>
-                  <button 
-                    className="btn-detail" 
-                    onClick={() => onViewDetail(item)}
+                  <Link 
+                    to={`/city/${encodeURIComponent(item.name)}`}
+                    className="btn-detail"
+                    style={{ textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
                   >
                     Details
-                  </button>
+                  </Link>
                 </td>
               </tr>
             );

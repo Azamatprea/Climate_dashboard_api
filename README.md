@@ -1,46 +1,40 @@
-# Web Development Project 5 - ClimaPulse
+# Web Development Project 6 - ClimaPulse
 
 Submitted by: **Azamat**
 
-This web app: **ClimaPulse is a real-time global weather intelligence dashboard that aggregates and processes meteorological statistics from 15 world-class metropolitan hubs using the Open-Meteo API.**
+This web app: **ClimaPulse is a real-time global weather intelligence dashboard that aggregates and processes meteorological statistics from 16 world-class metropolitan hubs (including the newly added Tashkent, Uzbekistan) using the Open-Meteo API. In Part 2, we integrated client-side routing using React Router and dynamic data visualization utilizing Recharts.**
 
-Time spent: **2.5** hours spent in total
+Time spent: **4.5** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [x] **The site has a dashboard displaying a list of data fetched using an API call**
-  - The dashboard displays at least 15 unique items, one per row.
-  - The dashboard includes multiple attributes per row: Weather condition status badges, custom temperature indicators, dynamic humidity progress bars, wind speeds, and rotated wind direction pointers.
-- [x] **`useEffect` React hook and `async`/`await` are used**
-- [x] **The app dashboard includes at least three summary statistics about the data**
-  - The app dashboard includes three summary statistics computed dynamically:
-    - **Global Mean Temp** (Average temperature across all cities)
-    - **Peak Wind Velocity** (Maximum wind speed recorded)
-    - **Clear Sky Ratio** (Percentage of cities with clear/sunny skies)
-- [x] **A search bar allows the user to search for an item in the fetched data**
-  - The search bar **correctly** filters items in the list, only displaying items matching the search query (city or country name).
-  - The list of results dynamically updates as the user types into the search bar.
-- [x] **An additional filter allows the user to restrict displayed items by specified categories**
-  - The filter restricts items in the list using **different attributes** than the search bar (Continent and Weather Condition category).
-  - The filter **correctly** filters items in the list, only displaying items matching the filter attributes.
-  - The dashboard list dynamically updates as the user adjusts the filters.
+- [x] **Clicking on an item in the list view displays more details about it**
+  - Clicking on an item in the dashboard list navigates to a detail view for that item
+  - Detail view includes extra information about the item not included in the dashboard view
+  - The same sidebar is displayed in detail view as in dashboard view
+  - *To ensure an accurate grade, your sidebar **must** be viewable when showing the details view in your recording.*
+- [x] **Each detail view of an item has a direct, unique URL link to that item’s detail view page**
+  -  *To ensure an accurate grade, the URL/address bar of your web browser **must** be viewable in your recording.*
+- [x] **The app includes at least two unique charts developed using the fetched data that tell an interesting story**
+  - At least two charts should be incorporated into the dashboard view of the site
+  - Each chart should describe a different aspect of the dataset
 
-The following **optional** (stretch) features are implemented:
 
-- [x] Multiple filters can be applied simultaneously (Search query, Continent selection, Weather condition type, wind speed minimums, and temperature bounds work together).
-- [x] Filters use different input types
-  - *Text Input:* Search bar.
-  - *Dropdown selects:* Continent and Weather Condition.
-  - *Range slider:* Minimum Wind Speed setting.
-  - *Number inputs:* Temperature bounds boundaries.
-- [x] The user can enter specific bounds for filter values (Min and Max temperatures in Celsius, Min wind speed in km/h).
+The following **optional** features are implemented:
 
+- [x] The site’s customized dashboard contains more content that explains what is interesting about the data 
+  - e.g., an additional description, graph annotation, suggestion for which filters to use, or an additional page that explains more about the data
+- [x] The site allows users to toggle between different data visualizations
+  - User should be able to use some mechanism to toggle between displaying and hiding visualizations 
+
+  
 The following **additional** features are implemented:
 
-* [x] **Detailed Modal Panel:** Clicking "Details" on any city displays a glassmorphic modal with advanced coordinates, elevation, timezone info, and a climate advisory statement.
-* [x] **Live Clock Widget:** A live-running digital clock in the dashboard header that updates every second.
+* [x] **Interactive Guided Exploration Preset Tours**: Clicking preset buttons (e.g. Desert Heat, Nordic Chill, Gale-Force Winds) automatically sets specific search and filter criteria.
+* [x] **Dynamic Extrema Highlights**: Real-time identification of the hottest, windiest, and most humid hubs in the active filtered view.
+* [x] **Added Tashkent (Uzbekistan)**: Appended Tashkent manually to verify fully data-driven dashboard compilation.
 
 ## Video Walkthrough
 
@@ -57,7 +51,7 @@ GIF created with ScreenToGif.
 
 ## Notes
 
-No major challenges were encountered. Care was taken to handle JSX characters correctly by escaping `<` and `>` to `&lt;` and `&gt;` inside the filter selects to prevent parsing errors.
+Vite 8 bundle compilation required manual installation of react-is due to a peer-dependency discrepancy in Recharts 3.0.
 
 ## License
 

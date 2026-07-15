@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 function Navbar() {
   return (
@@ -8,18 +9,27 @@ function Navbar() {
         <span className="brand-text text-gradient">ClimaPulse</span>
       </div>
       <nav className="sidebar-nav">
-        <button className="nav-item active">
+        <NavLink 
+          to="/" 
+          className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}
+        >
           <span className="nav-icon">📊</span>
           Dashboard
-        </button>
-        <button className="nav-item">
+        </NavLink>
+        <NavLink 
+          to="/maps" 
+          className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}
+        >
           <span className="nav-icon">🌍</span>
           Global Maps
-        </button>
-        <button className="nav-item">
+        </NavLink>
+        <NavLink 
+          to="/settings" 
+          className={({ isActive }) => isActive ? "nav-item active" : "nav-item"}
+        >
           <span className="nav-icon">⚙️</span>
           Settings
-        </button>
+        </NavLink>
       </nav>
     </aside>
   );
